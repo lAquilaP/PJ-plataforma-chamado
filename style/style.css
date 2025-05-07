@@ -1,0 +1,496 @@
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+h1{
+    font-size: 1.80rem;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+input, textarea{
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(111, 111, 111);
+    box-sizing: border-box;
+}
+#descricao{
+    height: 40px;
+    margin-top: 5px;
+    padding: 10px 10px;
+}
+.container{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#h1-login{
+    width: 90%;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+#titulo-home-entrada{
+    width: 85%;
+    font-weight: 300;
+    margin: 0 auto;
+}
+#titulo-home-entrada span{
+    font-weight: bold;
+}
+.nav{
+    width: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav li a{
+    font-size: 1.35rem;
+    font-weight: 200;
+    transition: all 0.3s ease;
+}
+
+.nav li a:hover {
+    font-weight: 600;
+    font-size: 1.40rem;
+}
+
+/*SECTION INPUT TEXT -  PESQUISA E MAIN HOME-ADMIN*/
+.input-pesquisa{
+    width: 100%;
+    margin-bottom: 30px;
+}
+#pesquisa{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 25px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    opacity: 50%;
+    color: #fff;
+    font-size: 1.10rem;
+    font-weight: 200;
+    transition: all 0.3s ease;
+}
+#pesquisa:hover{
+    border: none;
+    background-color: rgb(0, 0, 0);
+    opacity: 40%;
+}
+#pesquisa:focus{
+    border: none;
+    background-color: rgb(0, 0, 0);
+    opacity: 40%;
+}
+#pesquisa::placeholder{
+    color: #fff;
+    font-weight: 100;
+    font-size: 1rem;
+}
+.head-main{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.title{
+    width: 80%;
+}
+.campo-filtro{
+    width: 12%;
+    height: 40px;
+}
+#filtro{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 15px;
+    border: 4px solid black;
+}
+#filtro::placeholder{
+    font-weight: bold;
+    color: black;
+    font-size: 1.25rem;
+}
+.tabela{
+    width: 90%;
+    margin: 0 auto;
+}
+.tabela table{
+    width: 100%;
+}
+.cabecalho{
+    width: 100%;
+}
+.cabecalho tr{
+    height: 50px;
+}
+.col{
+    font-size: 1.35rem;
+    font-weight: 200;
+}
+.id{
+    width: 20%;
+}
+.impar-bg{
+    background-color: rgb(111, 111, 111);
+}
+.nome{
+    width: 60%;
+}
+.status{
+    width: 20%;
+}
+.chamados{
+    width: 100%;
+    text-align: center;
+}
+.chamados tr{
+    height: 35px;
+}
+.main{
+    flex: 1;
+}
+.header{
+    height: 12%;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 5%;
+    color: white;
+    align-content: center;
+}
+.login{
+    height: 80%;
+    width: 40%;
+    background-color: black;
+    opacity: 95%;
+    color: white;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+.formulario{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#id-ops, #nome, #senha, #email{
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(111, 111, 111);
+    color: white;
+    padding: 0 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+label{
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+.campo-ops{
+    width: 25%;
+}
+.campo-ops input{
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+.campo-nome{
+    width: 70%;
+}
+.campo-nome input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.campo-senha{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.campo-senha input{
+    width: 100%;
+    box-sizing: border-box;
+}
+#btn{
+    width: 35%;
+    height: 60px;
+    border: 3px solid #fff;
+    background-color: black;
+    opacity: 95;
+    color: white;
+    font-weight: bold;
+    font-size: 1.35rem;
+    margin: 0 auto;
+}
+#btn:hover{
+    background-color: #fff;
+    color: black;
+    border: none;
+    transition: all 0.3s ease;
+}
+.link{
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 30px;
+}
+
+.link a {
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    font-weight: 200;
+    font-size: 1.35rem;
+    padding: 5px;
+    color: rgb(0, 153, 255);
+    transition: all 0.3s ease;
+}
+
+.link a:hover {
+    font-weight: 600;
+    color: rgb(3, 105, 173);
+    font-size: 1.40rem;
+}
+
+.footer {
+    height: 12%;
+    width: 100%;
+    background-color: black;
+    margin-top: 12%;
+}
+  
+  .footer p {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    color: #fff;
+  }
+
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+.headline{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.close{
+    font-size: 1rem;
+}
+.form-chamado{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.modal-content {
+    background-color: #000;
+    opacity: 95%;
+    color: #fff;
+    padding: 35px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    margin: 15% auto; 
+}
+.form-user{
+    max-width: 750px;
+}
+#id, #cod-ops{
+    height: 40px;
+    padding: 0 10px;
+    margin-top: 5px;
+    color:#fff;
+}
+
+.campo-id{
+    width: 25%;
+    font-size: 1.10rem;
+}
+.campo-id input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.campo-operador{
+    width: 70%;
+}
+.campo-operador input{
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.campo-cod{
+    width: 100%;
+}
+.campo-cod input{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.campo-desc{
+    margin-top: 10px;
+    width: 100%;
+    height: 30%;
+}
+.campo-desc #descricao{
+    box-sizing: border-box;
+    min-width: 100%;
+    min-height: 100px;
+    height: 150px;
+    max-height: 200px;
+    max-width: 100%;
+    font-size: 1.10rem;
+    font-weight: 300;
+    color: #fff;
+}
+.campo-status, .campo-classificacao{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#title-form-status{
+    width: 100%;
+}
+.options{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.status-opcoes{
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: 200;
+    transition: all 0.3s ease;
+}
+.status-opcoes:hover{
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.vermelho:hover{
+    color: #690000;
+}
+.verde:hover{
+    color: #006909;
+}
+.azul:hover{
+    color: #005969;
+}
+label:has(input[value="em_andamento"]:checked){
+    color: #005969;
+    font-weight: 400;
+}
+label:has(input[value="concluido"]:checked){
+    color: #006909;
+    font-weight: 400;
+}
+label:has(input[value="cancelado"]:checked){
+    color: #690000;
+    font-weight: 400;
+}
+.secao-btn{
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+#cancelar,#excluir{
+    background-color: #fff;
+    color: #000;
+}
+#excluir:hover, #cancelar:hover{
+    background-color: #690000;
+    opacity: none !important;
+    color: #fff;
+}
+.btn-modal{
+    width: 100%;
+    background-color: black;
+    opacity: 95%;
+    height: 50px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+
+}
+.btn-modal:hover{
+    background-color: #fff;
+    color: black;
+    border: none;
+}
+.novo-cham{
+    width: 90%;
+    height: 80px;
+    align-content: center;
+    margin: 0 auto;
+}
+#btnChamado{
+    width: 25%;
+    background-color: white;
+    height: 50px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    border: 3px solid black;
+    transition: all 0.3s ease;
+
+}
+#btnChamado:hover{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+
+.campo-email{
+    width: 100%;
+}
+.campo-email input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.campo-classificacao{
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.footer-modal-line{
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    margin: 0 auto;
+}
