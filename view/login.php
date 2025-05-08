@@ -14,10 +14,10 @@
     <header class="header"></header>
     <main class="login"> 
         <h1 id="h1-login">Login</h1>
-        <form action="" method="POST" class="formulario">
+        <form action="../actions/verificaSessao.php" method="POST" class="formulario">
             <div class="campo-ops">
                 <label for="id-ops">ID Ops:</label>
-                <input type="number" name="id-ops" id="id-ops">
+                <input type="text" name="id-ops" id="id-ops">
             </div>
 
             <div class="campo-nome">

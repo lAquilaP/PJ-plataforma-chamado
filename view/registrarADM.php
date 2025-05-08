@@ -26,17 +26,7 @@
             </form>
             <div class="head-main">
                 <h1 class="title">Todos Operadores:</h1>
-                <form action="" method="get" class="campo-filtro">
-                    <input type="text" id="filtro" name="filtro" list="filtro-opcoes" placeholder="FILTRO: ">
 
-                    <datalist id="filtro-opcoes">
-                        <option value="MAIS RECENTES">
-                        <option value="MENOS RECENTES">
-                        <option value="ATIVOS">
-                        <option value="CANCELADOS">
-                        <option value="CONCLUÍDOS">
-                    </datalist>
-                </form>
             </div>
             <div class="tabela">
                 <table>
