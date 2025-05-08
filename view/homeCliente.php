@@ -1,3 +1,22 @@
+<?php
+session_start();
+require_once '../factory/conexao.php';
+
+$conn = new Caminho;
+$conexao = $conn->getConn();
+
+if (!isset($_SESSION['idOps'])) {
+    echo "Usuário não autenticado.";
+    exit;
+}
+
+$idOps = $_SESSION['idOps'];
+
+$stmt = $conexao->prepare("SELECT * FROM chamados WHERE idOps = ? ORDER BY created_at DESC");
+$stmt->execute([$idOps]);
+$chamados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,77 +31,58 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 id="titulo-home-entrada">Bem vindo, <span><?php echo "Cliente" ?></span>!</h1>
+            <h1 id="titulo-home-entrada">Bem vindo, <span><?php echo htmlspecialchars($_SESSION['nome']); ?></span>!</h1>
             <ul class="nav">
-                <li><a href="#">Sair</a></li>
+                <li><a href="../actions/logout.php">Sair</a></li>
             </ul>
         </div>
     </header> 
+
     <section class="main">
         <div class="container">
-            <form action="" method="get" class="input-pesquisa">
-                <input type="text" placeholder="Digite o ID do chamado..." name="pesquisa" id="pesquisa">
-            </form>
+           
             <div class="head-main">
                 <h1 class="title">Seus Chamados:</h1>
-                <form action="" method="get" class="campo-filtro">
-                    <input type="text" id="filtro" name="filtro" list="filtro-opcoes" placeholder="FILTRO: ">
-
-                    <datalist id="filtro-opcoes">
-                        <option value="MAIS RECENTES">
-                        <option value="MENOS RECENTES">
-                        <option value="ATIVOS">
-                        <option value="CANCELADOS">
-                        <option value="CONCLUÍDOS">
-                    </datalist>
-                </form>
             </div>
+
             <div class="tabela">
                 <table>
                     <thead class="cabecalho">
                         <tr>
-                            <th class="col id ">ID</th>
-                            <th class="col descricao-title">DESCRICAO</th>
+                            <th class="col id">ID</th>
+                            <th class="col descricao-title">DESCRIÇÃO</th>
                             <th class="col status">STATUS</th>
                         </tr>
                     </thead>
                     <tbody class="chamados">
-                        
-                        <tr class="openEditModal">
-                                <td class=" impar-bg"><?="id"?></td>
-                                <td class=" impar-bg"><?="descricao..."?></td>
-                                <td class="impar-bg"><?="status"?></td>                            
-                        </tr>
-                        <tr class="openEditModal">
-                            <td class=""><?="id"?></td>
-                            <td class=""><?="descricao..."?></td>
-                            <td class=""><?="status"?></td>
-                        </tr>
-                        <tr class="openEditModal">
-                            <td class="impar-bg"><?="id"?></td>
-                            <td class="impar-bg"><?="descricao..."?></td>
-                            <td class="impar-bg"><?="status"?></td>
-                        </tr>
-
+                        <?php foreach ($chamados as $chamado): ?>
+                            <tr class="openEditModal" data-id="<?= $chamado['idChamado'] ?>" data-nome="<?= htmlspecialchars($chamado['nome']) ?>" data-descricao="<?= htmlspecialchars($chamado['descricao']) ?>" data-status="<?= htmlspecialchars($chamado['status']) ?>">
+                                <td><?= $chamado['idChamado'] ?></td>
+                                <td><?= htmlspecialchars($chamado['descricao']) ?></td>
+                                <td class="<?= $chamado['status'] == 'em_andamento' ? 'azul' : ($chamado['status'] == 'concluido' ? 'verde' : 'vermelho') ?>">
+                                    <?= ucfirst($chamado['status']) ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+
+
             <div class="novo-cham">
                 <button class="openCriaModal" value="novo-chamado" id="btnChamado">NOVO CHAMADO</button>
             </div>
         </div>
-
     </section>
+
     <?php include("../include/modalEditaChamado.php") ?>
-
-
     <?php include("../include/modalCriaChamado.php") ?>
 
     <footer class="footer">
         <p>@COPY</p>
     </footer>    
-    <script src="../JS/script.js?v=<?php echo time(); ?>"></script>
 
+    <script src="../JS/script.js?v=<?php echo time(); ?>"></script>
 
 </body>
 </html>

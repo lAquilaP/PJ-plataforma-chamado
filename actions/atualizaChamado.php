@@ -7,7 +7,6 @@ $conexao = $conn->getConn();
 if (isset($_GET['id'])) {
     $idChamado = $_GET['id'];
 
-    // Buscando os dados do chamado
     $query = "SELECT * FROM chamados WHERE idChamado = :idChamado";
     $stmt = $conexao->prepare($query);
     $stmt->bindParam(':idChamado', $idChamado);
@@ -15,8 +14,9 @@ if (isset($_GET['id'])) {
 
     $chamado = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($chamado) {
-        $statusAtual = $chamado['status'];  // Pega o status do chamado
-        header("Location: ../view/homeADM.php");
+        $statusAtual = $chamado['status'];
+
+        include("../view/homeADM.php"); 
     } else {
         echo "Chamado não encontrado.";
         exit;
@@ -25,6 +25,3 @@ if (isset($_GET['id'])) {
     echo "ID do chamado não fornecido.";
     exit;
 }
-?>
-
-<?php include("modalBase.php"); ?>

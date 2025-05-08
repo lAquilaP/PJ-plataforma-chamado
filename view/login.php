@@ -8,8 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-
 </head>
+
+<!--
+    Usuário administrador:
+    idOps: Ops10000
+    Nome: Admin
+    Classe: adm
+    Senha: adm123
+    Email: admin@example.com
+    USE O ID OPS NOME E A SENHA
+-->
+
 <body>
     <header class="header"></header>
     <main class="login"> 
@@ -31,10 +41,7 @@
             <input type="submit" value="ENTRAR" id="btn">
 
         </form>
-        <div class="link">
-            <a href="#">Esqueceu seu ID OPS?</a>
-            <a href="#">Esqueceu sua senha?</a>
-        </div>
+
     </main>
     <footer class="footer">
         <p>@COPY</p>

@@ -196,7 +196,7 @@ input, textarea{
     justify-content: space-between;
 }
 
-#id-ops, #nome, #senha, #email{
+#id-ops, #nome, #senha, #email, #cod-ops, #email-criar, #senha-criar, #idOps{
     height: 40px;
     border: none;
     border-radius: 4px;
